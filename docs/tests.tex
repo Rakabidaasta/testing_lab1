@@ -75,21 +75,21 @@
 \end{itemize}
 
 \section{Негативные тесты}
-\subsection{extra\_tests -- дополнительные тесты. Проверяют работу функции при условии, что параметры "a", "b" или "c" равны 0}
-\subsubsection{suite1 -- линейное уравнение}
+\subsection{extra\_tests -- дополнительные тесты. Проверяют работу функции при условии, что параметры <<a>>, <<b>> или <<c>> равны 0}
+\subsubsection{linear\_equation -- линейное уравнение}
 Входные данные -- $a=0, b=1, c=2$\\
 Ожидаемый результат: структура solves:
 \begin{itemize}
     \item solves.count == 1
     \item solves.x1 == -2.0 (с точностью 0.000001)
 \end{itemize}
-\subsubsection{suite2 -- нет решений}
+\subsubsection{zero -- нет решений}
 Входные данные -- $a=0, b=0, c=1$\\
 Ожидаемый результат: структура solves:
 \begin{itemize}
     \item solves.count == 0
 \end{itemize}
-\subsubsection{suite3 -- бесконечно много решений}
+\subsubsection{infinity -- бесконечно много решений}
 Входные данные -- $a=0, b=0, c=0$\\
 Ожидаемый результат: структура solves:
 \begin{itemize}
