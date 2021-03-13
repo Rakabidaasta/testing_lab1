@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\begin{document}
+\section{Позитивные тесты}
+\subsection{one\_solve -- уравнения с одим решением}
+\subsubsection{suite1}
+Входные данные -- $a=1, b=0, c=0$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 1
+    \item solves.x1 == 0.0 (с точностью 0.000001)
+\end{itemize}
+\subsubsection{suite2}
+Входные данные -- $a=1, b=2, c=1$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 1
+    \item solves.x1 == -1.0 (с точностью 0.000001)
+\end{itemize}
+\subsubsection{suite3}
+Входные данные -- $a=1, b=-4, c=4$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 1
+    \item solves.x1 == 2.0 (с точностью 0.000001)
+\end{itemize}
+
+\subsection{two\_solves -- уравнения с двумя решениями}
+\subsubsection{suite1}
+Входные данные -- $a=1, b=-5, c=6$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 2
+    \item solves.x1 == 2.0 (с точностью 0.000001)
+    \item solves.x2 == 3.0 (с точностью 0.000001)
+\end{itemize}
+\subsubsection{suite2}
+Входные данные -- $a=2, b=2, c=-4$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 2
+    \item solves.x1 == -2.0 (с точностью 0.000001)
+    \item solves.x2 == 1.0 (с точностью 0.000001)
+\end{itemize}
+\subsubsection{suite3}
+Входные данные -- $a=1, b=5, c=6$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 2
+    \item solves.x1 == -3.0 (с точностью 0.000001)
+    \item solves.x2 == -2.0 (с точностью 0.000001)
+\end{itemize}
+
+\subsection{no\_solves -- уравнения без решений}
+\subsubsection{suite1}
+Входные данные -- $a=1, b=2, c=3$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 0
+\end{itemize}
+\subsubsection{suite2}
+Входные данные -- $a=6, b=6, c=9$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 0
+\end{itemize}
+\subsubsection{suite3}
+Входные данные -- $a=-6, b=-6, c=-9$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 0
+\end{itemize}
+
+\section{Негативные тесты}
+\subsection{extra\_tests -- дополнительные тесты. Проверяют работу функции при условии, что параметры "a", "b" или "c" равны 0}
+\subsubsection{suite1 -- линейное уравнение}
+Входные данные -- $a=0, b=1, c=2$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 1
+    \item solves.x1 == -2.0 (с точностью 0.000001)
+\end{itemize}
+\subsubsection{suite2 -- нет решений}
+Входные данные -- $a=0, b=0, c=1$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 0
+\end{itemize}
+\subsubsection{suite3 -- бесконечно много решений}
+Входные данные -- $a=0, b=0, c=0$\\
+Ожидаемый результат: структура solves:
+\begin{itemize}
+    \item solves.count == 0
+\end{itemize}
+
+\end{document}
