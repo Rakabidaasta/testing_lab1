@@ -8,6 +8,14 @@ solves solve_equation (double a, double b, double c)
     result.x2 = 0;
     result.count = 0;
 
+    if (a == 0 && b == 0) return result;
+
+    if (a == 0 && b != 0) {
+        result.count = 1;
+        result.x1 = (-c)/b;
+        return result;
+    }
+
     double d = b*b - 4*a*c;
     if (d < 0) return result;
 
