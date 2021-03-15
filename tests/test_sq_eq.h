@@ -91,4 +91,12 @@ TEST(extra_tests, infinity)
     EXPECT_EQ(s.count, 0);
 }
 
+TEST(extra_tests, float_test)
+{
+    solves s = solve_equation(1, 0.5, -2.1875);
+    EXPECT_EQ(s.count, 2);
+    EXPECT_NEAR(s.x1, -1.75, 0.000001);
+    EXPECT_NEAR(s.x2, 1.25, 0.000001);
+}
+
 #endif // TEST_SQ_EQ_H
